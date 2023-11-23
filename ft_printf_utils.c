@@ -6,7 +6,7 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:06:58 by irsander          #+#    #+#             */
-/*   Updated: 2023/11/23 01:04:57 by irsander         ###   ########.fr       */
+/*   Updated: 2023/11/23 02:27:18 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,33 @@ int	ft_putstr(char *s)
 	}
 	return (i);
 }
+int ft_putptr(void *p)
+{
+	int				length;
+	unsigned long	num;
+
+	length = 0;
+	num = (unsigned long)p;
+	if (p == NULL)
+	{
+		length += ft_putstr("0x0");
+		return (length);
+	}
+	if (length == 0)
+		length += ft_putstr("0x");
+	if (num >= 16)
+	{
+		(unsigned long)p = (void *)num;
+		length += ft_putptr(num / 16);
+	}
+	num = num % 16;
+	if (num < 10)
+		length += ft_putchar(num + '0');
+	else
+		length += ft_putchar(num + ('a' - 10));
+	return (length);
+}	
+
 
 int	ft_putnbr(long num, int base, int u_nbr, int upcase)
 {
@@ -39,7 +66,7 @@ int	ft_putnbr(long num, int base, int u_nbr, int upcase)
 	length = 0;
 	if (u_nbr == 1)
 		num = (unsigned int)num;
-	if (base == 10 && num < 0)
+	if (num < 0 && base <= 10)
 	{
 		length += ft_putchar('-');
 		num = -num;

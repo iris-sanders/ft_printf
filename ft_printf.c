@@ -6,7 +6,7 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:07:02 by irsander          #+#    #+#             */
-/*   Updated: 2023/11/23 01:05:49 by irsander         ###   ########.fr       */
+/*   Updated: 2023/11/23 01:38:59 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	string_conversion(va_list args, char c)
 	else if (c == 'X')
 		return (ft_putnbr(va_arg(args, int), 16, 1, 2));
 	else if (c == 'p')
-		return (ft_putnbr(va_arg(args, int), 16, 2, 1));
+		return (ft_putptr(va_arg(args, void *)));
+		// return (ft_putnbr(va_arg(args, int), 16, 2, 1));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
