@@ -6,22 +6,24 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:07:06 by irsander          #+#    #+#             */
-/*   Updated: 2023/11/22 17:23:50 by irsander         ###   ########.fr       */
+/*   Updated: 2023/11/23 01:07:14 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
 
 //ft_printf.c
-int    ft_printf(const char *, ...);
+int		ft_printf(const char *s, ...);
+int		string_conversion(va_list args, char c);
 
 //ft_printf_utils.c
 int		ft_putchar(char c);
 int		ft_putstr(char *s);
+int		ft_putnbr(long int num, int base, int u_nbr, int upcase);
 
 #endif
