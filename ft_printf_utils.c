@@ -6,7 +6,7 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:06:58 by irsander          #+#    #+#             */
-/*   Updated: 2023/11/23 02:27:18 by irsander         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:06:23 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	ft_putstr(char *s)
 	if (!s)
 		return (write(1, "(null)", 6));
 	while (s[i])
-	{
-		write(1, &s[i], 1);
 		i++;
-	}
+	i = write(1, s, i);
 	return (i);
 }
 int ft_putptr(void *p)
@@ -43,13 +41,10 @@ int ft_putptr(void *p)
 		length += ft_putstr("0x0");
 		return (length);
 	}
+	if (num >= 16)
+		length += ft_putptr((void *)(num / 16));
 	if (length == 0)
 		length += ft_putstr("0x");
-	if (num >= 16)
-	{
-		(unsigned long)p = (void *)num;
-		length += ft_putptr(num / 16);
-	}
 	num = num % 16;
 	if (num < 10)
 		length += ft_putchar(num + '0');
