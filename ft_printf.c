@@ -6,7 +6,7 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:07:02 by irsander          #+#    #+#             */
-/*   Updated: 2024/01/12 19:04:17 by irsander         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:05:49 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_printf(const char *s, ...)
 // 	printf("  og printf: %c\n\n", character);
 
 // 	ft_printf("- s: print string test\n");
-// 	char *string = "hallo";
+// 	char *string = "lol";
 // 	ft_printf("  my printf: %s\n", string);
 // 	printf("  og printf: %s\n\n", string);
 
@@ -102,4 +102,5 @@ int	ft_printf(const char *s, ...)
 // 	char *pointer = "h";
 // 	ft_printf("  my printf: %p\n", pointer);
 // 	printf("  og printf: %p\n\n", pointer);
+// 	return (0);
 // }

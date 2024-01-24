@@ -6,7 +6,7 @@
 /*   By: irsander <irsander@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 23:06:58 by irsander          #+#    #+#             */
-/*   Updated: 2024/01/12 19:06:23 by irsander         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:08:41 by irsander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_putstr(char *s)
 	i = write(1, s, i);
 	return (i);
 }
+
 int ft_putptr(void *p)
 {
 	int				length;
